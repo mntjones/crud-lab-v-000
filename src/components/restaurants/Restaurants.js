@@ -3,13 +3,11 @@ import Restaurant from './Restaurant';
 
 class Restaurants extends Component {
   render() {
-
-
     return(
       <ul>
-        this.props.restaurants.map(
-           restaurant => return <Restaurant key={restaurant.id} restaurant={restaurant}
-           deleteRestaurant={this.props.deleteRestaurant} />)
+        {this.props.restaurants.map(restaurant =>
+          <Restaurant key={restaurant.id} deleteRestaurant={this.props.deleteRestaurant}
+          restaurant={restaurant}/>)}
       </ul>
     );
   }
