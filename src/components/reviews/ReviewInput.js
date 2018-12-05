@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Reviews from './Reviews';
 
 class ReviewInput extends Component {
 
@@ -7,13 +6,13 @@ class ReviewInput extends Component {
     text: ''
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
       this.setState({
         text: e.target.value
       });
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.addReview({text: this.state.text, restaurantId: this.props.restaurantId});
     this.setState({text: ''});
@@ -22,11 +21,11 @@ class ReviewInput extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={e => this.handleSubmit(e)}>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             value={this.state.text}
-            onChange={e => this.handleChange(e)}
+            onChange={this.handleChange}
           />
           <input type="submit"/>
         </form>

@@ -14,8 +14,9 @@ class Restaurant extends Component {
       <div>
         <li>
           {restaurant.text}
-          <button onClick={() => this.handleDelete()}> X </button>
-          <ReviewsContainer restaurant={restaurant}/>
+          <button onClick={() => this.handleDelete()}> 
+          X </button>
+          <ReviewsContainer restaurantId={this.props.restaurant.id}/>
         </li>
       </div>
     );
